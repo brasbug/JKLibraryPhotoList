@@ -8,6 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
-@interface JKAlbumCollectionViewCell : UICollectionViewCell
+@interface JKAlbumCollectionPhotoCell : UICollectionViewCell
+
+@property (nonatomic, strong) UIImageView *imageView;
+@property (nonatomic, strong) BOOL (^selectButtonClicked)(BOOL);
+@property (nonatomic, readonly) UIButton *selectButton;
+
+@end
+
+@interface JKAlbumCollectionCamaraCell : UICollectionViewCell
+
+@property (nonatomic, strong) UIImageView *imageView;
+
 
 @end

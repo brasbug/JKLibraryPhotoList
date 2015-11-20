@@ -22,7 +22,6 @@
 		04E6A1311BFDCBCA008C4D46 /* NVPopoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E6A1281BFDCBCA008C4D46 /* NVPopoverView.m */; };
 		04E6A1321BFDCBCA008C4D46 /* UIView+Layout.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E6A12A1BFDCBCA008C4D46 /* UIView+Layout.m */; };
 		04E6A13B1BFDD9E7008C4D46 /* JKAlbumCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E6A1391BFDD9E7008C4D46 /* JKAlbumCollectionViewCell.m */; };
-		04E6A13C1BFDD9E7008C4D46 /* JKAlbumCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04E6A13A1BFDD9E7008C4D46 /* JKAlbumCollectionViewCell.xib */; };
 		04E6A1A71BFEC2D2008C4D46 /* EXTADT.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E6A1901BFEC2D2008C4D46 /* EXTADT.m */; };
 		04E6A1A81BFEC2D2008C4D46 /* EXTConcreteProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E6A1921BFEC2D2008C4D46 /* EXTConcreteProtocol.m */; };
 		04E6A1A91BFEC2D2008C4D46 /* EXTNil.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E6A1961BFEC2D2008C4D46 /* EXTNil.m */; };
@@ -71,7 +70,6 @@
 		04E6A1361BFDD7E8008C4D46 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		04E6A1381BFDD9E7008C4D46 /* JKAlbumCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKAlbumCollectionViewCell.h; sourceTree = "<group>"; };
 		04E6A1391BFDD9E7008C4D46 /* JKAlbumCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKAlbumCollectionViewCell.m; sourceTree = "<group>"; };
-		04E6A13A1BFDD9E7008C4D46 /* JKAlbumCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JKAlbumCollectionViewCell.xib; sourceTree = "<group>"; };
 		04E6A18F1BFEC2D2008C4D46 /* EXTADT.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EXTADT.h; sourceTree = "<group>"; };
 		04E6A1901BFEC2D2008C4D46 /* EXTADT.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EXTADT.m; sourceTree = "<group>"; };
 		04E6A1911BFEC2D2008C4D46 /* EXTConcreteProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EXTConcreteProtocol.h; sourceTree = "<group>"; };
@@ -217,7 +215,6 @@
 			children = (
 				04E6A1381BFDD9E7008C4D46 /* JKAlbumCollectionViewCell.h */,
 				04E6A1391BFDD9E7008C4D46 /* JKAlbumCollectionViewCell.m */,
-				04E6A13A1BFDD9E7008C4D46 /* JKAlbumCollectionViewCell.xib */,
 			);
 			path = SubViews;
 			sourceTree = "<group>";
@@ -341,7 +338,6 @@
 				04E6A0C51BFDC048008C4D46 /* LaunchScreen.storyboard in Resources */,
 				04E6A0C21BFDC048008C4D46 /* Assets.xcassets in Resources */,
 				04E6A0C01BFDC048008C4D46 /* Main.storyboard in Resources */,
-				04E6A13C1BFDD9E7008C4D46 /* JKAlbumCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
