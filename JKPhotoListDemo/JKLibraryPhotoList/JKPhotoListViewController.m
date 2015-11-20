@@ -92,38 +92,16 @@
         JKAlbumCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"photoCell" forIndexPath:indexPath];
         JKPhotoAsset *asset = [self.activeCollection objectAtIndex:indexPath.row - 1];
         @weakify(self);
-        [asset getThumbImageWithSize:CGSizeMake(self.cellWidth * [UIScreen mainScreen].scale, self.cellWidth * [UIScreen mainScreen].scale) withComplete:^(UIImage *result) {
-            @strongify(self);
-            cell.imageView.image = result;
-        }];
-        cell.selectButton.selected = [selectArray containsObject:asset.identifier];
-        cell.selectButtonClicked = ^(BOOL selected){
-            @strongify(self);
-            UGCPhotoAsset *asset = [self.activeCollection objectAtIndex:indexPath.row - 1];
-            if (selected) {
-                return [self selectAsset:asset];
-            }
-            else {
-                return [self deselectAsset:asset];
-            }
-            
-        };
+       
+        
         return cell;
     }
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     [collectionView deselectItemAtIndexPath:indexPath animated:NO];
-    if (!indexPath.row) {
-        if (self.ucHelper.currentSelectedPhotos.count == self.maxnum) {
-        } else {
-            [self ga_logEventType:NVGaEventTypeTap forLabel:@"camera" userInfo:self.ga_userinfo];
-            [self openCamera];
-        }
-        return;
-    }
-    [self ga_logEventType:NVGaEventTypeTap forLabel:@"onePreview" userInfo:self.ga_userinfo];
-    [self showPreviewWithIndex:@(indexPath.row - 1)];
+    
+    
 }
 
 @end
