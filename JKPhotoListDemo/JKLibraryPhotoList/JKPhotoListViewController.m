@@ -9,11 +9,10 @@
 #import "JKPhotoListViewController.h"
 #import "CHTCollectionViewWaterfallLayout.h"
 #import "JKPhotoCollection.h"
-#import "JKAlbumCollectionViewCell.h"
 #import "JKPhotoAsset.h"
 #import "JKPhotoLibrary.h"
 
-#import "JKAlbumCollectionViewCell.h"
+#import "JKAlbumCollectionPhotoCell.h"
 
 @interface JKPhotoListViewController ()<UICollectionViewDataSource,UICollectionViewDelegate,CHTCollectionViewDelegateWaterfallLayout>
 
@@ -21,23 +20,20 @@
 @property (nonatomic, strong) JKPhotoCollection                *activeCollection;
 @property (nonatomic, strong) JKPhotoLibrary                   *photoLibrary;
 @property (nonatomic, strong) NSArray                           *photoAlbums;
+@property (nonatomic, assign) NSUInteger                         maxnum;
+
 
 @property (nonatomic, assign) CGFloat cellWidth;
 //@property (nonatomic, strong)
 
 @end
 
+
+NSMutableArray *selectArray;
+NSMutableArray *selectPhotoInfos;
+
 @implementation JKPhotoListViewController
 
-
-
-- (instancetype)init
-{
-    if (self= [super init]) {
-        
-    }
-    return self;
-}
 
 - (UICollectionView *)collectionView
 {
@@ -45,12 +41,12 @@
         return _collectionView;
     }
     
-    CGFloat margin = 15;
     CGFloat balanceValue = 100;
     NSInteger viewCount = [UIScreen mainScreen].bounds.size.width / balanceValue;
     CGFloat width = self.view.width -( viewCount - 1 ) * 10 - 30;
-    _cellWidth = width / viewCount;
-    
+    width = width / viewCount;
+    _cellWidth = width;
+    CGFloat margin = 15;
     UICollectionViewFlowLayout *layout = [UICollectionViewFlowLayout new];
         layout.itemSize = CGSizeMake(self.cellWidth, self.cellWidth);
     layout.sectionInset = UIEdgeInsetsMake(margin, margin, margin, margin);
@@ -75,6 +71,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    selectArray = [NSMutableArray new];
+    selectPhotoInfos = [NSMutableArray new];
     self.title = @"相册";
     
     [self.view addSubview:self.collectionView];
@@ -108,7 +106,13 @@
             @strongify(self);
             cell.imageView.image = result;
         }];
-
+        cell.selectButton.selected = [selectArray containsObject:asset.identifier];
+        cell.selectButtonClicked = ^(BOOL selected){
+            JKPhotoAsset * asset = [self.activeCollection objectAtIndex:indexPath.row - 1];
+            if (selected) {
+//                return se 
+            }
+        };
         
         return cell;
     }
@@ -119,6 +123,9 @@
     
     
 }
+
+
+
 
 
 #pragma mark - Getdata

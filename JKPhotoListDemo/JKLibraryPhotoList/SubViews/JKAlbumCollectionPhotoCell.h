@@ -8,11 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+typedef void(^selectButtonBlock)(BOOL selected);
+
 @interface JKAlbumCollectionPhotoCell : UICollectionViewCell
 
 @property (nonatomic, strong) UIImageView *imageView;
-@property (nonatomic, strong) BOOL (^selectButtonClicked)(BOOL);
+@property (nonatomic, assign) selectButtonBlock selectButtonClicked;;
 @property (nonatomic, readonly) UIButton *selectButton;
+
+
 
 @end
 

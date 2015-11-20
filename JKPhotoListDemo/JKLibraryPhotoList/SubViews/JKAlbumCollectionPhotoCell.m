@@ -6,14 +6,12 @@
 //  Copyright © 2015年 宇之楓鷙. All rights reserved.
 //
 
-#import "JKAlbumCollectionViewCell.h"
+#import "JKAlbumCollectionPhotoCell.h"
 
 
 
 @interface JKAlbumCollectionPhotoCell ()
 @property (nonatomic, readwrite, strong) UIButton *selectButton;
-
-
 @end
 
 @implementation JKAlbumCollectionPhotoCell
@@ -48,14 +46,12 @@
 }
 
 - (void)buttonClicked{
+    BOOL isselected = !self.selectButton.isSelected;
+    self.selectButton.selected = !self.selectButton.isSelected;
     if (self.selectButtonClicked) {
-        BOOL result =  self.selectButtonClicked(!self.selectButton.isSelected);
-        if (result) {
-            self.selectButton.selected = !self.selectButton.isSelected;
-        }
+        self.selectButtonClicked(isselected);
     }
 }
-
 
 
 @end
