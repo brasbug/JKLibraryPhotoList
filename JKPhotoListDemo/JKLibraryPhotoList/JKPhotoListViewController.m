@@ -70,6 +70,9 @@
     
     [self.view addSubview:self.collectionView];
     
+//    [self requestPermissionAndFetchData];
+
+    
 }
 
 
