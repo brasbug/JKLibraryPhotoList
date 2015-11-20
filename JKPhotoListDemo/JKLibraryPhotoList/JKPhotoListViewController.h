@@ -7,6 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "JKPhotoLibrary.h"
+#import "JKUserContentHelper.h"
+
 
 @interface JKPhotoListViewController : UIViewController
 

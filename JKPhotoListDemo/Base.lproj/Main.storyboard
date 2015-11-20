@@ -23,10 +23,10 @@
             </objects>
             <point key="canvasLocation" x="-608" y="316"/>
         </scene>
-        <!--Photo List View Controller-->
+        <!--View Controller-->
         <scene sceneID="Ite-Ii-qnY">
             <objects>
-                <viewController id="YYJ-iB-edO" customClass="JKPhotoListViewController" sceneMemberID="viewController">
+                <viewController id="YYJ-iB-edO" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fK8-Z8-MMn"/>
                         <viewControllerLayoutGuide type="bottom" id="7pC-gf-Pp2"/>
@@ -34,6 +34,16 @@
                     <view key="view" contentMode="scaleToFill" id="jKh-Ud-DDV">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XwA-xt-dBQ">
+                                <rect key="frame" x="120" y="290" width="46" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="btnPressed:" destination="YYJ-iB-edO" eventType="touchUpInside" id="miR-aH-I4C"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -41,7 +51,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kxK-db-8mU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="40" y="242"/>
+            <point key="canvasLocation" x="35" y="316"/>
         </scene>
     </scenes>
 </document>

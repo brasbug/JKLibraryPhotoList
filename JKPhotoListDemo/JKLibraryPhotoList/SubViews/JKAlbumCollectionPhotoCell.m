@@ -46,10 +46,11 @@
 }
 
 - (void)buttonClicked{
-    BOOL isselected = !self.selectButton.isSelected;
-    self.selectButton.selected = !self.selectButton.isSelected;
     if (self.selectButtonClicked) {
-        self.selectButtonClicked(isselected);
+        BOOL result =  self.selectButtonClicked(!self.selectButton.isSelected);
+        if (result) {
+            self.selectButton.selected = !self.selectButton.isSelected;
+        }
     }
 }
 

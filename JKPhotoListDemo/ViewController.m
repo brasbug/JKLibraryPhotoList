@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "JKLibraryPhotoList/JKPhotoListViewController.h"
 
 @interface ViewController ()
 
@@ -17,6 +18,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+}
+- (IBAction)btnPressed:(id)sender {
+    JKPhotoListViewController *vc = [JKPhotoListViewController new];
+    [[JKUserContentHelper shareInstance]createNewPhotoSelectContextAndRemoveOldOneWithMaxNum:4];
+    vc.view.backgroundColor = [UIColor whiteColor];
+    [self.navigationController pushViewController:vc animated:YES];
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {

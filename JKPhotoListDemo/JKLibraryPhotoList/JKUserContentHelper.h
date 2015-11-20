@@ -7,13 +7,23 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "JKPhotoAsset.h"
 
 @interface JKUserContentHelper : NSObject
 
 @property (nonatomic)         NSArray   *currentSelectedPhotos;
 @property (nonatomic, assign) NSInteger  maxSelectNum;
 
-
 +(instancetype)shareInstance;
+
+- (void)createNewPhotoSelectContextAndRemoveOldOneWithMaxNum:(NSInteger)maxNum;
+- (void)invalidateSelectPhotoContext;
+
+
+- (void)selectPhoto:(JKPhotoAsset *)photoAsset;
+- (void)deselectPhoto:(JKPhotoAsset *)photoAsset;
+- (void)addPhotosToContextFromArray:(NSArray *)array;
+- (void)deletePhotosFromContextInArray:(NSArray *)array;
+- (JKPhotoAsset *)photoWithSelectedIdentifier:(NSString *)key;
 
 @end
