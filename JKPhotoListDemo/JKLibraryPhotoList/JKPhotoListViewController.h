@@ -11,6 +11,11 @@
 #import "JKUserContentHelper.h"
 
 
+
 @interface JKPhotoListViewController : UIViewController
+
+
+- (void)imagePickerDidFinishPickingMediaWithInfo:(NSDictionary *)info;
+
 
 @end

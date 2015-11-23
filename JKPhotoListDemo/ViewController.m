@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "JKLibraryPhotoList/JKPhotoListViewController.h"
+#import "testViewController.h"
 
 @interface ViewController ()
 
@@ -20,7 +21,7 @@
     // Do any additional setup after loading the view, typically from a nib.
 }
 - (IBAction)btnPressed:(id)sender {
-    JKPhotoListViewController *vc = [JKPhotoListViewController new];
+    testViewController *vc = [testViewController new];
     [[JKUserContentHelper shareInstance]createNewPhotoSelectContextAndRemoveOldOneWithMaxNum:4];
     vc.view.backgroundColor = [UIColor whiteColor];
     [self.navigationController pushViewController:vc animated:YES];

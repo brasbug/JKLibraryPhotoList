@@ -10,6 +10,7 @@
 		04B72C801BFEE2560001FD92 /* JKUserContentHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B72C7F1BFEE2560001FD92 /* JKUserContentHelper.m */; };
 		04B72C831BFEF9A60001FD92 /* JKPhotoWithExtroInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B72C821BFEF9A60001FD92 /* JKPhotoWithExtroInfo.m */; };
 		04B72C861BFEF9D30001FD92 /* JKUploadPhotoInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B72C851BFEF9D30001FD92 /* JKUploadPhotoInfo.m */; };
+		04C9393A1C02B13B0054862A /* testViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C939391C02B13B0054862A /* testViewController.m */; };
 		04E6A0B71BFDC048008C4D46 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E6A0B61BFDC048008C4D46 /* main.m */; };
 		04E6A0BA1BFDC048008C4D46 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E6A0B91BFDC048008C4D46 /* AppDelegate.m */; };
 		04E6A0BD1BFDC048008C4D46 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E6A0BC1BFDC048008C4D46 /* ViewController.m */; };
@@ -38,12 +39,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		04019F5A1C02B3C200A27B8E /* JKPhotoHeaders.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKPhotoHeaders.h; sourceTree = "<group>"; };
 		04B72C7E1BFEE2560001FD92 /* JKUserContentHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKUserContentHelper.h; sourceTree = "<group>"; };
 		04B72C7F1BFEE2560001FD92 /* JKUserContentHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKUserContentHelper.m; sourceTree = "<group>"; };
 		04B72C811BFEF9A60001FD92 /* JKPhotoWithExtroInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKPhotoWithExtroInfo.h; sourceTree = "<group>"; };
 		04B72C821BFEF9A60001FD92 /* JKPhotoWithExtroInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKPhotoWithExtroInfo.m; sourceTree = "<group>"; };
 		04B72C841BFEF9D30001FD92 /* JKUploadPhotoInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKUploadPhotoInfo.h; sourceTree = "<group>"; };
 		04B72C851BFEF9D30001FD92 /* JKUploadPhotoInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKUploadPhotoInfo.m; sourceTree = "<group>"; };
+		04C939381C02B13B0054862A /* testViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = testViewController.h; sourceTree = "<group>"; };
+		04C939391C02B13B0054862A /* testViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = testViewController.m; sourceTree = "<group>"; };
 		04E6A0B21BFDC048008C4D46 /* JKPhotoListDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JKPhotoListDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04E6A0B61BFDC048008C4D46 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		04E6A0B81BFDC048008C4D46 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -149,6 +153,8 @@
 				04E6A0B91BFDC048008C4D46 /* AppDelegate.m */,
 				04E6A0BB1BFDC048008C4D46 /* ViewController.h */,
 				04E6A0BC1BFDC048008C4D46 /* ViewController.m */,
+				04C939381C02B13B0054862A /* testViewController.h */,
+				04C939391C02B13B0054862A /* testViewController.m */,
 				04E6A0B51BFDC048008C4D46 /* Supporting Files */,
 			);
 			path = JKPhotoListDemo;
@@ -188,27 +194,28 @@
 		04E6A1181BFDCBCA008C4D46 /* JKLibraryPhotoList */ = {
 			isa = PBXGroup;
 			children = (
-				04E6A1261BFDCBCA008C4D46 /* NVPopoverView */,
+				04E6A1191BFDCBCA008C4D46 /* JKPhotoAlbumSelectView.h */,
+				04E6A11A1BFDCBCA008C4D46 /* JKPhotoAlbumSelectView.m */,
 				04E6A11C1BFDCBCA008C4D46 /* JKPhotoAsset.h */,
 				04E6A11D1BFDCBCA008C4D46 /* JKPhotoAsset.m */,
+				04E6A11B1BFDCBCA008C4D46 /* JKPhotoAsset+Private.h */,
 				04E6A11E1BFDCBCA008C4D46 /* JKPhotoCollection.h */,
 				04E6A11F1BFDCBCA008C4D46 /* JKPhotoCollection.m */,
 				04E6A1331BFDCE02008C4D46 /* JKPhotoCollection+Private.h */,
+				04019F5A1C02B3C200A27B8E /* JKPhotoHeaders.h */,
 				04E6A1201BFDCBCA008C4D46 /* JKPhotoLibrary.h */,
 				04E6A1211BFDCBCA008C4D46 /* JKPhotoLibrary.m */,
-				04B72C841BFEF9D30001FD92 /* JKUploadPhotoInfo.h */,
-				04B72C851BFEF9D30001FD92 /* JKUploadPhotoInfo.m */,
-				04B72C811BFEF9A60001FD92 /* JKPhotoWithExtroInfo.h */,
-				04B72C821BFEF9A60001FD92 /* JKPhotoWithExtroInfo.m */,
-				04B72C7E1BFEE2560001FD92 /* JKUserContentHelper.h */,
-				04B72C7F1BFEE2560001FD92 /* JKUserContentHelper.m */,
-				04E6A11B1BFDCBCA008C4D46 /* JKPhotoAsset+Private.h */,
 				04E6A1221BFDCBCA008C4D46 /* JKPhotoLibraryTools.h */,
 				04E6A1231BFDCBCA008C4D46 /* JKPhotoLibraryTools.m */,
-				04E6A1191BFDCBCA008C4D46 /* JKPhotoAlbumSelectView.h */,
-				04E6A11A1BFDCBCA008C4D46 /* JKPhotoAlbumSelectView.m */,
 				04E6A1241BFDCBCA008C4D46 /* JKPhotoListViewController.h */,
 				04E6A1251BFDCBCA008C4D46 /* JKPhotoListViewController.m */,
+				04B72C811BFEF9A60001FD92 /* JKPhotoWithExtroInfo.h */,
+				04B72C821BFEF9A60001FD92 /* JKPhotoWithExtroInfo.m */,
+				04B72C841BFEF9D30001FD92 /* JKUploadPhotoInfo.h */,
+				04B72C851BFEF9D30001FD92 /* JKUploadPhotoInfo.m */,
+				04B72C7E1BFEE2560001FD92 /* JKUserContentHelper.h */,
+				04B72C7F1BFEE2560001FD92 /* JKUserContentHelper.m */,
+				04E6A1261BFDCBCA008C4D46 /* NVPopoverView */,
 				04E6A1371BFDD99C008C4D46 /* SubViews */,
 			);
 			path = JKLibraryPhotoList;
@@ -435,6 +442,7 @@
 				04E6A1321BFDCBCA008C4D46 /* UIView+Layout.m in Sources */,
 				04E6A0B71BFDC048008C4D46 /* main.m in Sources */,
 				04E6A12D1BFDCBCA008C4D46 /* JKPhotoCollection.m in Sources */,
+				04C9393A1C02B13B0054862A /* testViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
