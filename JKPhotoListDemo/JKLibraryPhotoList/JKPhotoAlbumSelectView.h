@@ -8,6 +8,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#define PhotoSelectCellHeigh 72
 @class JKPhotoCollection;
 @interface JKPhotoAlbumSelectView : UIView
 

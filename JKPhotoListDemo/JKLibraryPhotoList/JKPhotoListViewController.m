@@ -115,9 +115,54 @@ NSMutableArray *selectPhotoInfos;
     [self requestPermissionAndFetchData];
     
     self.oldSelectNum = self.ucHelper.currentSelectedPhotos.count;
-    
+    [self updateTitleView];
+
+}
+- (void)updateTitle{
+    UIButton *button = (UIButton *)self.navigationItem.titleView;
+    [button setTitle:self.activeCollection.name forState:UIControlStateNormal];
+    [button sizeToFit];
+    button.height = 44;
+    button.titleEdgeInsets = UIEdgeInsetsMake(0, -button.imageView.width, 0, button.imageView.width);
+    button.imageEdgeInsets = UIEdgeInsetsMake(0, button.titleLabel.width, 0, -button.titleLabel.width);
 }
 
+
+- (void)updateTitleView{
+    UIButton *button = [UIButton new];
+    button.backgroundColor = [UIColor clearColor];
+    button.titleLabel.font= [UIFont systemFontOfSize:16];
+    [button setImage:[UIImage imageNamed:@"DPdropdown_arrow_d"] forState:UIControlStateNormal];
+    [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [button addTarget:self action:@selector(showAlbumSelectPage:) forControlEvents:UIControlEventTouchUpInside];
+    [button sizeToFit];
+    button.height = 44;
+    self.navigationItem.titleView = button;
+}
+
+- (void)showAlbumSelectPage:(UIButton *)sender{
+    if ([NVPopoverView popoverIsShowed]) {
+        [NVPopoverView dismissPopoverViewAnimated:YES];
+        [sender setImage:[UIImage imageNamed:@"DPdropdown_arrow_d"] forState:UIControlStateNormal];
+        return;
+    }
+    [sender setImage:[UIImage imageNamed:@"DPdropdown_arrow_u"] forState:UIControlStateNormal];
+    NVPopoverView *popView = [NVPopoverView sharedPopoverView];
+    JKPhotoAlbumSelectView *selectView = [[JKPhotoAlbumSelectView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, 72*3)];
+    selectView.albums = self.photoAlbums;
+    @weakify(self);
+    selectView.photoAlbumSelected = ^(JKPhotoCollection *collection){
+        @strongify(self);
+        [NVPopoverView dismissPopoverViewAnimated:YES];
+        [sender setImage:[UIImage imageNamed:@"DPdropdown_arrow_d"] forState:UIControlStateNormal];
+        if (self.activeCollection != collection) {
+            self.activeCollection = collection;
+            [self preloadAssetsFromActiveCollection];
+        }
+    };
+    popView.componentsView = selectView;
+    [popView showPopoverViewInView:self.navigationItem.titleView position:NVPopoverPositionBelow animated:YES];
+}
 
 #pragma mark - UICollectionViewDelegate and DataSource
 
@@ -220,6 +265,7 @@ NSMutableArray *selectPhotoInfos;
 }
 
 - (void)preloadAssetsFromActiveCollection{
+    [self updateTitle];
     [self.activeCollection preloadPicWithCompletion:^{
         [self.collectionView reloadData];
     }];
