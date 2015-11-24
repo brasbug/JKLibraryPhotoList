@@ -19,7 +19,7 @@ static dispatch_once_t _onceFlag;
 
 @property (nonatomic, strong) NSMutableArray       *selectedPhotos;
 @property (nonatomic, strong) NSMutableDictionary  *selectPhotosDic;
-
+//@property (nonatomic, strong) 
 
 @end
 

@@ -3,7 +3,7 @@
 //  apollo
 //
 //  Created by Jack on 15/11/19.
-//  Copyright © 2015年 季 浩勉. All rights reserved.
+//  Copyright © 2015年 宇之楓鷙. All rights reserved.
 //
 
 #import "JKPhotoListViewController.h"
@@ -245,14 +245,15 @@ NSMutableArray *selectPhotoInfos;
     @weakify(self)
     [self dismissViewControllerAnimated:YES completion:^{
         @strongify(self)
-        NSLog(@"%@",info);
-//        UGCPhotoWithExtroInfo *photoInfo = [UGCPhotoWithExtroInfo new];
-//        photoInfo.identifier = [NSString NV_uuidString];
-//        [photoInfo saveImageToFilePathWithImage:info[UIImagePickerControllerOriginalImage]];
-//        [self.ucHelper selectPhoto:photoInfo];
-//        [self nextButtonClicked];
+        [self imagePickerDidFinishPickingMediaWithInfo:info];
     }];
 }
+
+- (void)imagePickerDidFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+    
+}
+
 - (void)image:(UIImage*)image didFinishSavingWithError:(NSError*)error contextInfo:(void*)contextInfo
 {
     [self requestPermissionAndFetchData];

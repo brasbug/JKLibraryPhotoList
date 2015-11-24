@@ -3,19 +3,46 @@
 //  apollo
 //
 //  Created by Jack on 15/11/19.
-//  Copyright © 2015年 季 浩勉. All rights reserved.
+//  Copyright © 2015年 宇之楓鷙. All rights reserved.
 //
 
 #import "JKPhotoAlbumSelectView.h"
+#import "JKPhotoAlbumSelectCell.h"
+
+
+@interface JKPhotoAlbumSelectView ()<UITableViewDataSource,UITableViewDelegate>
+
+@property (nonatomic,strong) UITableView * tableView;
+
+@end
+
 
 @implementation JKPhotoAlbumSelectView
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
+- (instancetype)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (self) {
+        _tableView = [UITableView new];
+        _tableView.delegate = self;
+        _tableView.dataSource = self;
+        [self addSubview:_tableView];
+    }
+    return self;
 }
-*/
+
+- (void)layoutSubviews{
+    [super layoutSubviews];
+    
+    self.tableView.frame = self.bounds;
+}
+
+- (void)setAlbums:(NSArray *)albums{
+    _albums = albums;
+    [self.tableView reloadData];
+}
+
+
+
 
 @end
