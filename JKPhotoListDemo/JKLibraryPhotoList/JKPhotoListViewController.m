@@ -11,6 +11,8 @@
 #import "JKPhotoAsset.h"
 #import "JKAlbumCollectionPhotoCell.h"
 #import <AVFoundation/AVFoundation.h>
+#import "JKPhotoAlbumSelectView.h"
+#import "NVPopoverView.h"
 
 
 @interface JKPhotoListViewController ()<UICollectionViewDataSource,UICollectionViewDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate>
